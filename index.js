@@ -21,5 +21,5 @@ app.use('/', routes());
 //inciando los servicios
 
 app.listen(process.env.PORT? process.env.PORT : "3000",()=>{
-    console.log('Servidor funcionando',  process.env.BD_HOST);
+    console.log('Servidor funcionando');
 })
