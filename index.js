@@ -1,10 +1,13 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const routes = require('./routes/index')
 
-//Setting
-const port = process.env.PORT || 4000;
+
+
+
 
 
 //Midellwares
@@ -16,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', routes());
 
 //inciando los servicios
-app.listen( port,  ()=>{
-    console.log(`el servidro esta funcionando en el puerto: ${port}`)
+
+app.listen(process.env.PORT? process.env.PORT : "3000",()=>{
+    console.log('Servidor funcionando',  process.env.BD_HOST);
 })

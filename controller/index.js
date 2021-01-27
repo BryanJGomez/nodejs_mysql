@@ -1,5 +1,7 @@
+
 const { query } = require('../database/conexion');
 const mysqlConexion = require('../database/conexion');
+
 
 exports.index = (req, res, next)=>{
     mysqlConexion.query('SELECT * FROM empleados', (err, rows, fields) =>{
